@@ -1,0 +1,78 @@
+Beta reduce Evaluate (that is, beta reduce) each of the following
+expressions to normal form. We strongly recommend writing out the
+steps on paper with a pencil or pen.
+
+1. (λabc.cba)zz(λwv.w)
+    a. bind first variable z to a
+    -> (λbc.cbz)z(λwv.w)
+    b. bind next variable z to b
+    -> (λc.czz)(λwv.w)
+    c. bind next variable λwv.w to c
+    -> λwv.wzz
+    d. bind next variable z to w
+    -> λv.vz
+    e. bind last variable z to v
+    -> z
+
+2. (λx.λy.xyy)(λa.a)b
+    (λy.(λa.a)yy)(b)
+    (λa.a)(b)b
+    bb
+
+3. (λy.y)(λx.xx)(λz.zq)
+   (λx.xx)(λz.zq)
+   (λz.zq)(λz.zq)
+   (λz.zq)q
+   qq
+
+4. (λz.z)(λz.zz)(λz.zy)
+Hint: alpha equivalence.
+    (λz.z)(λz.zz)(λz.zy)
+    (λz.zz)(λz.zy)
+    (λz.zy)(λz.zy)
+    (λz.zy)(y)
+    yy
+
+5. (λx.λy.xyy)(λy.y)y
+    (λy.(λy.y)yy)y
+    (λy.y)yy
+    yy
+
+6. (λa.aa)(λb.ba)c
+    (λb.ba)(λb.ba)c
+    (λb.ba)(a)c
+    aac
+
+7. (λxyz.xz(yz))(λx.z)(λx.a)
+    (λx.λy.λz.xz(yz))(λx.z)(λx.a)
+    (λy.λz1.(λx.z)z1(yz1))(λx.a)
+    (λz1.(λx.z)z1((λx.a)z1))
+    (λz1.(λx.z)z1a)
+
+    (λy.λz1.(λx.z)z1(yz1))(λx.a)
+    (λz1.(λx.z)z1((λx.a)z1))
+    (λz1.(λx.z)z1(a)
+    (λx.z)a
+
+    a) (λxyz.xz(yz))(λx.z)(λx.a)
+    b) (λx.λy.λz.xz(yz))(λx.z)(λx.a)
+    c) (λy.λz1.(λx.z)z1(yz1))(λx.a)
+    d) (λz1.(λx.z)(z1)((λx.a)z1))
+    e) (λz1.z((λx.a)(z1)))
+    f) (λz1.za) The z1 notation allows us to distinguish two vari-
+    ables named z that came from different places. One is
+    bound by the first head; the second is a free variable in the
+    second lambda expression.
+
+Follow-up resources
+These are optional and intended only to offer suggestions on how you
+might deepen your understanding of this topic. These references are
+ordered approximately from most approachable to most thorough.
+1. Raul Rojas. A Tutorial Introduction to the Lambda Calculus
+http://www.inf.fu-berlin.de/lehre/WS03/alpi/lambda.pdf
+2. Henk Barendregt; Erik Barendsen. Introduction to Lambda
+Calculus
+http://www.cse.chalmers.se/research/group/logic/TypesSS05/
+Extra/geuvers.pdf
+3. Jean-Yves Girard; P. Taylor; Yves Lafon. Proofs and Types
+http://www.paultaylor.eu/stable/prot.pdf
