@@ -7,3 +7,7 @@ x :: (Ord a, Num b) => a -> b -> a; x = undefined
 
 all warnings:
 :set -Wall
+
+review:
+08_recursion: exercises.hs dividedByX
+
