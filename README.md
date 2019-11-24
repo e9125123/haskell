@@ -11,3 +11,9 @@ all warnings:
 review:
 08_recursion: exercises.hs dividedByX
 
+type
+newtype
+data
+class
+instance
+
